@@ -1,2 +1,1 @@
-// TODO: replace with the real production domain once deployed.
-export const siteUrl = "https://alleahtricia.vercel.app"
+export const siteUrl = "https://alleah-portfolio.vercel.app"
