@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Award, GraduationCap } from "lucide-react"
+import { motion } from "framer-motion";
+import { Award, GraduationCap } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { certifications, education } from "@/lib/resume-data"
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { certifications, education } from "@/lib/resume-data";
 
 const containerVariants = {
   hidden: {},
   show: {
     transition: { staggerChildren: 0.12 },
   },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -21,11 +21,14 @@ const itemVariants = {
     y: 0,
     transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const },
   },
-}
+};
 
 export function CertificationsEducation() {
   return (
-    <section id="certifications" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-16 sm:px-6">
+    <section
+      id="certifications"
+      className="mx-auto max-w-5xl scroll-mt-16 px-4 py-16 sm:px-6"
+    >
       <div className="grid gap-12 sm:grid-cols-2">
         <div>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
@@ -58,7 +61,9 @@ export function CertificationsEducation() {
                     </span>
                     <div>
                       <p className="text-sm font-medium">{cert.name}</p>
-                      <p className="text-xs text-muted-foreground">{cert.issuer}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {cert.issuer}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -101,7 +106,9 @@ export function CertificationsEducation() {
                       <p className="text-xs text-muted-foreground">
                         {edu.school} &middot; {edu.location}
                       </p>
-                      <p className="text-xs text-muted-foreground">{edu.period}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {edu.period}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -110,8 +117,6 @@ export function CertificationsEducation() {
           </motion.div>
         </div>
       </div>
-
-      <Separator className="mt-16" />
     </section>
-  )
+  );
 }

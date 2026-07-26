@@ -12,12 +12,21 @@ export const personalInfo = {
 export const summary =
   "Data Analyst with 2+ years of experience turning complex sales and market data into clear, actionable insights. Comfortable working deep in Excel — cleaning, validating, and structuring large datasets — and building dashboards in Power BI that make reporting faster and easier to act on. Experienced in translating requests from commercial and sales teams into practical, data-backed recommendations that actually get used."
 
-export const stats = [
-  { label: "Years of Experience", value: "2+" },
-  { label: "Companies", value: "2" },
-  { label: "Certifications", value: "3" },
-  { label: "Core Tool", value: "Power BI" },
-] as const
+const careerStartDate = new Date(2023, 5, 1) // June 2023, per the Pepsi-Cola Products role start
+
+function getYearsOfExperience(startDate: Date): string {
+  const now = new Date()
+  let years = now.getFullYear() - startDate.getFullYear()
+  const hasHadAnniversaryThisYear =
+    now.getMonth() > startDate.getMonth() ||
+    (now.getMonth() === startDate.getMonth() && now.getDate() >= startDate.getDate())
+
+  if (!hasHadAnniversaryThisYear) {
+    years -= 1
+  }
+
+  return `${years}+`
+}
 
 export const experience = [
   {
@@ -47,6 +56,8 @@ export const experience = [
     ],
   },
 ] as const
+
+const companyCount = new Set(experience.map((role) => role.company)).size
 
 export const skillGroups = [
   {
@@ -89,6 +100,15 @@ export const certifications = [
   },
   { name: "Sales Force Effectiveness (SFE) Certification", issuer: "MEPI" },
 ] as const
+
+const skillCount = skillGroups.reduce((total, group) => total + group.skills.length, 0)
+
+export const stats = [
+  { label: "Years of Experience", value: getYearsOfExperience(careerStartDate) },
+  { label: "Companies", value: `${companyCount}` },
+  { label: "Skills", value: `${skillCount}+` },
+  { label: "Core Tool", value: "Power BI" },
+]
 
 export const education = [
   {

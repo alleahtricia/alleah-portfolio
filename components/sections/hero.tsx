@@ -80,7 +80,7 @@ export function Hero() {
           animate="show"
         >
           <motion.div variants={itemVariants}>
-            <Badge className="bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300 text-md p-3 uppercase font-medium">
+            <Badge className="border border-purple-300 bg-purple-50 text-purple-700 dark:border-purple-800 dark:bg-purple-950 dark:text-purple-300 text-md p-3 uppercase font-medium">
               Data Analytics Associate
             </Badge>
           </motion.div>

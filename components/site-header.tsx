@@ -1,15 +1,26 @@
-import { Download } from "lucide-react"
+import { Download } from "lucide-react";
+import Image from "next/image";
 
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { navLinks, personalInfo } from "@/lib/resume-data"
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { navLinks, personalInfo } from "@/lib/resume-data";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="font-heading text-sm font-semibold tracking-tight">
-          {personalInfo.name}
+        <a
+          href="#top"
+          className="flex items-center gap-2 font-heading text-sm font-semibold tracking-tight"
+        >
+          <Image
+            src="/leys-icon.svg"
+            alt=""
+            width={36}
+            height={36}
+            priority
+            className="size-10"
+          />
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
@@ -41,5 +52,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }

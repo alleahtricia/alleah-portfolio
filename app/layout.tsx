@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { PageLoader } from "@/components/page-loader";
 import { ThemeProvider } from "@/components/theme-provider";
 import { personalInfo, summary } from "@/lib/resume-data";
 import { siteUrl } from "@/lib/site-config";
@@ -108,6 +109,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <PageLoader />
           {children}
         </ThemeProvider>
       </body>
