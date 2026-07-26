@@ -9,9 +9,6 @@ export const personalInfo = {
   resumeFile: "/Alleah Tricia De Castro Resume.pdf",
 } as const
 
-export const summary =
-  "Data Analyst with 2+ years of experience turning complex sales and market data into clear, actionable insights. Comfortable working deep in Excel — cleaning, validating, and structuring large datasets — and building dashboards in Power BI that make reporting faster and easier to act on. Experienced in translating requests from commercial and sales teams into practical, data-backed recommendations that actually get used."
-
 const careerStartDate = new Date(2023, 5, 1) // June 2023, per the Pepsi-Cola Products role start
 
 function getYearsOfExperience(startDate: Date): string {
@@ -27,6 +24,8 @@ function getYearsOfExperience(startDate: Date): string {
 
   return `${years}+`
 }
+
+export const summary = `Data Analyst with ${getYearsOfExperience(careerStartDate)} years of experience turning complex sales and market data into clear, actionable insights. Comfortable working deep in Excel — cleaning, validating, and structuring large datasets — and building dashboards in Power BI that make reporting faster and easier to act on. Experienced in translating requests from commercial and sales teams into practical, data-backed recommendations that actually get used.`
 
 export const experience = [
   {
