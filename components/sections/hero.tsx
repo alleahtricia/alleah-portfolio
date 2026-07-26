@@ -88,8 +88,20 @@ export function Hero() {
             variants={itemVariants}
             className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl"
           >
-            Hi, I&apos;m {personalInfo.name.split(" ")[0]}. I turn messy data
-            into decisions people actually use.
+            Hi, I&apos;m {personalInfo.name.split(" ")[0]}{" "}
+            <motion.span
+              className="inline-block origin-[70%_70%]"
+              animate={{ rotate: [0, 20, -10, 20, -5, 15, 0] }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                repeatDelay: 1.5,
+                ease: "easeInOut",
+              }}
+              aria-hidden="true"
+            >
+              👋
+            </motion.span>
           </motion.h1>
           <motion.p
             variants={itemVariants}
@@ -105,7 +117,12 @@ export function Hero() {
               size="lg"
               nativeButton={false}
               render={
-                <a href={personalInfo.resumeFile} download>
+                <a
+                  href={personalInfo.resumeFile}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Download aria-hidden="true" data-icon="inline-start" />
                   Download Resume
                 </a>

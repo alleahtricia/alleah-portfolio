@@ -42,7 +42,12 @@ export function SiteHeader() {
             className="hidden sm:inline-flex"
             nativeButton={false}
             render={
-              <a href={personalInfo.resumeFile} download>
+              <a
+                href={personalInfo.resumeFile}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download aria-hidden="true" data-icon="inline-start" />
                 Resume
               </a>
